@@ -23,7 +23,7 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the Damn Vulnerable Web Application.
 
-Load balancing not only ensures that the application will be highly available, but also that incoming traffic flowing to the webservers is restricted to the project owner's Public IP via HTTP port 80. Likewise the Jump-Box is used as the sole ssh gateway into the network via port 22, limited, in this case, to the project owner's public IP.
+Load balancing not only ensures that the application will be highly available, but also that incoming traffic flowing to the webservers is restricted to the project owner's Public IP via HTTP port 80, requiring only one rule regardless of the number of webservers now or in the future. Likewise the Jump-Box is used as the sole ssh gateway into the network via port 22 and limited, in this case, to the project owner's public IP address.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs, as well as system and application metrics.
 
