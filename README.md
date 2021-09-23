@@ -3,15 +3,14 @@ Using Elk-stack, Ansible, Docker &amp; DVWA
 ## Automated ELK Stack Deployment
 
 The files in this repository were used to configure the network depicted below.
-http://github.com - automatic!
-[GitHub](http://github.com)
+
 ![## Automated ELK Stack Deployment
 
 The files in this repository were used to configure the network depicted below.
 
 ![Flowchart](https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Diagrams/Azure%20Flowchart.jpg)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the install-elk.yml file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/install_elk.yml.jpg" target="_top">install_elk.yml</a> file may be used to install only certain pieces of it, such as Filebeat.
   
 
 This document contains the following details:
@@ -27,12 +26,11 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the Damn Vulnerable Web Application.
 
-Load balancing not only ensures that the application will be highly available, but also that incoming traffic to the webservers via HTTP port 80 be restricted to flow through the load balancer Public IP (In this case from the project owner's IP). Likewise the Jump-Box is used as the sole ssh gateway into the network via port 22, limited, in this case, to the project owner's public IP.
+Load balancing not only ensures that the application will be highly available, but also that incoming traffic flowing to the webservers is restricted to the project owner's Public IP via HTTP port 80. Likewise the Jump-Box is used as the sole ssh gateway into the network via port 22, limited, in this case, to the project owner's public IP.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs, as well as system and application metrics.
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
@@ -47,13 +45,13 @@ The machines on the internal network are not exposed to the public Internet.
 
 Only the Jump-Box machine can accept ssh connections via port 22 from the Internet. Access to this machine is only allowed from the following IP addresses: 172.88.124.110
 
-Machines within the network can only be accessed by the Jump-Box Provisioner (Public IP:52.160.125.3 Private IP:10.0.0.4) .
+Machines within the network can only be accessed by the Jump-Box Provisioner (Public IP:52.160.125.3 Private IP:10.0.0.5) .
 
 A summary of the access policies in place can be found in the table below.
 
 | Name               | Publicly Accessible | Allowed IP Addresses |
 |--------------------|---------------------|----------------------|
-| Jump Box           | Yes (ssh P22)       | 172.88.124.110       |
+| Jump Box           | Yes (ssh p22)       | 172.88.124.110       |
 | Elk Server (Web-A) | Yes (tcp p5601)     | 172.88.124.110       |
 | Load Balancer      | Yes (http p80)      | 172.88.124.110       |
 | Web-1              | No                  | 10.0.0.5             |
@@ -64,13 +62,14 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because any number number of webservers can be done by one script.  This also allows easy update should more webservers be added in the future.
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- Install Docker.io
+- Install python3-pip
+- Create, image and launch a docker container
+- Assign ports to the docker container
+- Enable Docker
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
