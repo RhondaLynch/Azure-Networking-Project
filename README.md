@@ -8,7 +8,7 @@ The files in this repository were used to configure the network depicted below.
 
 The files in this repository were used to configure the network depicted below.
 
-![Flowchart](https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Diagrams/Azure%20Flowchart.jpg)
+![Flowchart](https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Diagrams/Azure%20Flowchartx.jpg)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/install_elk.yml.jpg" target="_top">install_elk.yml</a> file may be used to install only certain pieces of it, such as Filebeat.
   
@@ -98,7 +98,7 @@ SSH into the control node and follow the steps below:
 - Navigate to the <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/filebeat-config.yml.jpg" target="_top">Filebeat-config.yml</a> and <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/metricbeat-config.yml.jpg" target="_top">Metricbeat-config.yml</a> files in /etc/ansible within the container to configure to identify the host port, username and password for Elasticsearch and Kibana.
 - Run the playbook, and navigate to Kibana at 40.117.114.71:5601/app/kibana to check that the installation worked as expected.
 
-Commands used to run playbooks:
+### Commands used to run playbooks:
 First, make sure that your Azure machines are running.
 - ssh from windows git bash to the Network Jumpbox
   - ssh rhondalynch@52.160.125.3
@@ -112,11 +112,5 @@ First, make sure that your Azure machines are running.
    - ansible-playbook /etc/ansible/filebeat-playbook.yml
    - ansible-playbook /etc/ansible/metricbeat-playbook.yml
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
-
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._](Images/diagram_filename.png)
-
+Any errors in the playbook will be indicated and need to be corrected and re-run.
 
