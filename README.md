@@ -4,10 +4,6 @@ Using Elk-stack, Ansible, Docker &amp; DVWA
 
 The files in this repository were used to configure the network depicted below.
 
-![## Automated ELK Stack Deployment
-
-The files in this repository were used to configure the network depicted below.
-
 ![Flowchart](https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Diagrams/Azure%20Flowchartx.jpg)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/install_elk.yml.jpg" target="_top">install_elk.yml</a> file may be used to install only certain pieces of it, such as Filebeat.
