@@ -99,12 +99,18 @@ SSH into the control node and follow the steps below:
 - Run the playbook, and navigate to Kibana at 40.117.114.71:5601/app/kibana to check that the installation worked as expected.
 
 Commands used to run playbooks:
-
-- After I ssh into the jumpbox (ssh rhondalynch@52.160.125.3) be sure that docker is running at that your container is running:
+First, make sure that your Azure machines are running.
+- ssh from windows git bash to the Network Jumpbox
+  - ssh rhondalynch@52.160.125.3
+- Make sure that docker is running at that your container is running:
    - sudo systemctl start docker
    - sudo docker exec -it hungry_euclid /bin/bash
-- :
-   - 
+- Go into the ansible container
+   - sudo docker exec -ti hungry_euclid /bin/bash
+- After ensuring that setup (detailed above) is complete in all yml & config files, as well as the host file, run the the yml files
+   - ansible-playbook /etc/ansible/install-elk.yml
+   - ansible-playbook /etc/ansible/filebeat-playbook.yml
+   - ansible-playbook /etc/ansible/metricbeat-playbook.yml
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
