@@ -16,6 +16,7 @@ This document contains the following details:
   - Beats in Use
   - Machines Being Monitored
 - How to Use the Ansible Build
+- Commands used to run the playbooks
 
 
 ### Description of the Topology
