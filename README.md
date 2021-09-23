@@ -77,20 +77,24 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+- Web-1 10.0.0.6
+- Web-2 10.0.0.7
+- Web-3 10.0.0.8
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+- <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/filebeat-playbook.yml.jpg" target="_top">Filebeat</a>
+- <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/metricbeat-playbook.yml.jpg" target="_top">Metricbeat</a>
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- Filebeat: Filebeat is a customizable vehicle for forwarding and centralizing log events to tools such as Elasticsearch or Logstash for indexing and manipulation to be visually displayed in tools such as Kibana
+- Metricbeat: Metricbeat monitors and accumulates system information such as CPU usage, memory, file system etc., and forwards the data to tools such as Elasticsearch or Logstash for further manipulation and anlysis.  This information can then be visualized via tools such as Kibana.    
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
+- Copy the <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/filebeat-playbook.yml.jpg" target="_top">Filebeat yml file</a>file and <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/metricbeat-playbook.yml.jpg" target="_top">Metricbeat yml file</a> to /etc/ansible/roles within the container.
+- Update the /etc/ansible/hosts file to include the <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/hosts.jpg" target="_top">webservers and elk server</a>
 - Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
