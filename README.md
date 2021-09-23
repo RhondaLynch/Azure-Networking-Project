@@ -26,39 +26,40 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the Damn Vulnerable Web Application.
 
-Load balancing not only ensures that the application will be highly available, but also that incoming traffic to the webservers via HTTP port 80 be restricted to flow through the load balancer Public IP (In this case from the project owner's IP). Likewise the Jump-Box is used as the sole ssh gateway into the network via port 22, limited, in this case, to the project owner's public IP.)
+Load balancing not only ensures that the application will be highly available, but also that incoming traffic to the webservers via HTTP port 80 be restricted to flow through the load balancer Public IP (In this case from the project owner's IP). Likewise the Jump-Box is used as the sole ssh gateway into the network via port 22, limited, in this case, to the project owner's public IP.
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs, as well as system and application metrics.
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| Jump Box | Gateway    | 10.0.0.5 | Linux            |
+| Web-1    | Web Server | 10.0.0.6 | Linux            |
+| Web-2    | Web Server | 10.0.0.7 | Linux            |
+| Web-3    | Web Server | 10.0.0.8 | Linux            |
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the Jump-Box machine can accept ssh connections via port 22 from the Internet. Access to this machine is only allowed from the following IP addresses: 172.88.124.110
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed by the Jump-Box Provisioner (Public IP:52.160.125.3 Private IP:10.0.0.4) .
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Name               | Publicly Accessible | Allowed IP Addresses |
+|--------------------|---------------------|----------------------|
+| Jump Box           | Yes (ssh P22)       | 172.88.124.110       |
+| Elk Server (Web-A) | Yes (tcp p5601)     | 172.88.124.110       |
+| Load Balancer      | Yes (http p80)      | 172.88.124.110       |
+| Web-1              | No                  | 10.0.0.5             |
+| Web-2              | No                  | 10.0.0.5             |
+| Web-3              | No                  | 10.0.0.5             |
+
+
 
 ### Elk Configuration
 
