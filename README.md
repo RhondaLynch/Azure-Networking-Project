@@ -101,11 +101,11 @@ First, make sure that your Azure machines are running.
   - ssh rhondalynch@52.160.125.3
 - Make sure that docker is running at that your container is running:
    - sudo systemctl start docker
-   - sudo docker exec -it hungry_euclid /bin/bash
+   - sudo start hungry_euclid
 - Go into the ansible container
    - sudo docker exec -ti hungry_euclid /bin/bash
 - After ensuring that setup (detailed above) is complete in all yml & config files, as well as the host file, run the the yml files
-   - ansible-playbook /etc/ansible/install-elk.yml
+   - ansible-playbook /etc/ansible/install_elk.yml
    - ansible-playbook /etc/ansible/filebeat-playbook.yml
    - ansible-playbook /etc/ansible/metricbeat-playbook.yml
 
