@@ -51,9 +51,9 @@ A summary of the access policies in place can be found in the table below.
 | Jump Box           | Yes (ssh p22)       | xxx.xx.xxx.x         |
 | Elk Server (Web-A) | Yes (tcp p5601)     | xxx.xx.xxx.x         |
 | Load Balancer      | Yes (http p80)      | xxx.xx.xxx.x         |
-| Web-1              | No                  | 10.0.0.5             |
-| Web-2              | No                  | 10.0.0.5             |
-| Web-3              | No                  | 10.0.0.5             |
+| Web-1              | No                  | 10.0.0.6             |
+| Web-2              | No                  | 10.0.0.7             |
+| Web-3              | No                  | 10.0.0.8             |
 
 
 
