@@ -40,7 +40,7 @@ The configuration details of each machine may be found below.
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the Jump-Box machine can accept ssh connections via port 22 from the Internet. Access to this machine is only allowed from the following IP addresses: 172.88.124.110
+Only the Jump-Box machine can accept ssh connections via port 22 from the Internet. Access to this machine is only allowed from the following IP addresses: xxx.xx.xxx.x
 
 Machines within the network can only be accessed by the Jump-Box Provisioner (Public IP:52.160.125.3 Private IP:10.0.0.5) .
 
@@ -48,9 +48,9 @@ A summary of the access policies in place can be found in the table below.
 
 | Name               | Publicly Accessible | Allowed IP Addresses |
 |--------------------|---------------------|----------------------|
-| Jump Box           | Yes (ssh p22)       | 172.88.124.110       |
-| Elk Server (Web-A) | Yes (tcp p5601)     | 172.88.124.110       |
-| Load Balancer      | Yes (http p80)      | 172.88.124.110       |
+| Jump Box           | Yes (ssh p22)       | xxx.xx.xxx.x         |
+| Elk Server (Web-A) | Yes (tcp p5601)     | xxx.xx.xxx.x         |
+| Load Balancer      | Yes (http p80)      | xxx.xx.xxx.x         |
 | Web-1              | No                  | 10.0.0.5             |
 | Web-2              | No                  | 10.0.0.5             |
 | Web-3              | No                  | 10.0.0.5             |
