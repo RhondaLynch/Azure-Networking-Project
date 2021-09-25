@@ -78,7 +78,7 @@ This ELK server is configured to monitor the following machines:
 - Web-2 10.0.0.7
 - Web-3 10.0.0.8
 
-We have installed the following Beats on these machines:
+We have installed the following Beats on these DVWA machines by running the yml files shown below from the Jumpbox ansible container, hungry_euclid:
 - <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/filebeat-playbook.yml.jpg" target="_top">Filebeat</a>
 - <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/metricbeat-playbook.yml.jpg" target="_top">Metricbeat</a>
 
