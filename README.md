@@ -93,7 +93,7 @@ SSH into the control node and follow the steps below:
 - Copy the <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/filebeat-playbook.yml.jpg" target="_top">Filebeat yml file</a> and <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/metricbeat-playbook.yml.jpg" target="_top">Metricbeat yml file</a> to /etc/ansible/roles within the ansible container.
 - Update the /etc/ansible/hosts file within the ansible container to include the <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/hosts.jpg" target="_top">webservers and elk server</a>
 - Navigate to the <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/filebeat-config.yml.jpg" target="_top">Filebeat-config.yml</a> and <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/metricbeat-config.yml.jpg" target="_top">Metricbeat-config.yml</a> files in /etc/ansible within the container to configure to identify the host port, username and password for Elasticsearch and Kibana.
-- Run the playbook, and navigate to Kibana at 40.117.114.71:5601/app/kibana to check that the installation worked as expected.
+- Run the playbooks, then navigate to Kibana at 40.117.114.71:5601/app/kibana to check that the installation worked as expected.
 
 ### Commands used to run playbooks:
 First, make sure that your Azure machines are running.
