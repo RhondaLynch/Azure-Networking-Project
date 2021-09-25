@@ -59,7 +59,7 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine using a  <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/filebeat-playbook.yml.jpg" target="_top">Filebeat</a> from the Jumpbox ansible container, hungry_euclid. No configuration was performed manually, which is advantageous because any number of webservers can be done by one script.  This also allows easy update should more webservers be added in the future.
+Ansible was used to automate configuration of the ELK machine from the Jumpbox ansible container hungry_euclid, by executing the <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/install_elk.yml.jpg" target="_top">install_elk.yml file</a>. No configuration was performed manually, which is advantageous because any number of webservers can be done by one script.  This also allows easy update should more webservers be added in the future.
 
 The playbook implements the following tasks:
 - Install Docker.io
