@@ -84,7 +84,7 @@ We have installed the following Beats on these machines:
 
 These Beats allow us to collect the following information from each machine:
 - Filebeat: Filebeat is a customizable vehicle for forwarding and centralizing log events to tools such as Elasticsearch or Logstash for indexing and manipulation to be visually displayed in tools such as Kibana
-- Metricbeat: Metricbeat monitors and accumulates system information such as CPU usage, memory, file system etc., and forwards the data to tools such as Elasticsearch or Logstash for further manipulation and anlysis.  This information can then be visualized via tools such as Kibana.    
+- Metricbeat: Metricbeat monitors and accumulates system information such as CPU usage, memory, file system etc., and forwards the data to tools such as Elasticsearch or Logstash for further manipulation and anlysis.  This information can then be visualized via tools such as Kibana.  Metricbeat is also customizable.  
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
