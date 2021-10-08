@@ -54,7 +54,7 @@ A summary of the access policies in place can be found in the table below.
 | Web-1              | No*                 | 10.0.0.5             |
 | Web-2              | No*                 | 10.0.0.5             |
 | Web-3              | No*                 | 10.0.0.5             |
-* Web-1, Web-2 & Web-3 are available through the load balancer accessible only via the project owner's IP addr xxx.xx.xxx.x.
+* Web-1, Web-2 & Web-3 are available through the frontend Public IP of theload balancer accessible only via the project owner's IP addr xxx.xx.xxx.x.
 
 
 ### Elk Configuration
