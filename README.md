@@ -6,7 +6,7 @@ The files in this repository were used to configure the network depicted below.
 
 ![Flowchart](https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Diagrams/Azure%20Flowchart.jpg)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to recreate the entire deployment pictured above. Alternatively, select portions of the <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/install_elk.yml.txt" target="_top">install_elk.yml</a> file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to recreate the entire deployment pictured above. Alternatively, select portions of the <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/install_elk.yml" target="_top">install_elk.yml</a> file may be used to install only certain pieces of it, such as Filebeat.
   
 
 This document contains the following details:
@@ -51,15 +51,15 @@ A summary of the access policies in place can be found in the table below.
 | Jump Box           | Yes (ssh p22)       | xxx.xx.xxx.x         |
 | Elk Server (Web-A) | Yes (tcp p5601)     | xxx.xx.xxx.x         |
 | Load Balancer      | Yes (http p80)      | xxx.xx.xxx.x         |
-| Web-1              | No                  | 10.0.0.5             |
-| Web-2              | No                  | 10.0.0.5             |
-| Web-3              | No                  | 10.0.0.5             |
-
+| Web-1              | No*                 | 10.0.0.5             |
+| Web-2              | No*                 | 10.0.0.5             |
+| Web-3              | No*                 | 10.0.0.5             |
+* Web-1, Web-2 & Web-3 are available through the load balancer accessible only via the project owner's IP addr xxx.xx.xxx.x.
 
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine from the Jumpbox ansible container hungry_euclid, by executing the <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/install_elk.yml.txt" target="_top">install_elk.yml file</a>. No configuration was performed manually, which is advantageous because any number of webservers can be done by one script.  This also allows easy update should more webservers be added in the future.
+Ansible was used to automate configuration of the ELK machine from the Jumpbox ansible container hungry_euclid, by executing the <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/install_elk.yml" target="_top">install_elk.yml file</a>. No configuration was performed manually, which is advantageous because any number of webservers can be done by one script.  This also allows easy update should more webservers be added in the future.
 
 The playbook implements the following tasks:
 - Install Docker.io
@@ -79,8 +79,8 @@ This ELK server is configured to monitor the following machines:
 - Web-3 10.0.0.8
 
 We have installed the following Beats on these DVWA machines by running the yml files shown below from the Jumpbox ansible container, hungry_euclid:
-- <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/filebeat-playbook.yml.txt" target="_top">Filebeat</a>
-- <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/metricbeat-playbook.yml.txt" target="_top">Metricbeat</a>
+- <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/filebeat-playbook.yml" target="_top">Filebeat</a>
+- <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/metricbeat-playbook.yml" target="_top">Metricbeat</a>
 
 These Beats allow us to collect the following information from each machine:
 - Filebeat: Filebeat is a customizable vehicle for forwarding and centralizing log events to tools such as Elasticsearch or Logstash for indexing and manipulation to be visually displayed in tools such as Kibana
@@ -90,9 +90,9 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/filebeat-playbook.yml.txt" target="_top">Filebeat yml file</a> and <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/metricbeat-playbook.yml.txt" target="_top">Metricbeat yml file</a> to /etc/ansible/roles within the ansible container.
-- Update the /etc/ansible/hosts file within the ansible container to include the <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/hosts.txt" target="_top">webservers and elk server</a>
-- Navigate to the <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/filebeat-config.yml.txt" target="_top">Filebeat-config.yml</a> and <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/metricbeat-config.yml.txt" target="_top">Metricbeat-config.yml</a> files in /etc/ansible within the container to configure to identify the host port, username and password for Elasticsearch and Kibana.
+- Copy the <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/filebeat-playbook.yml" target="_top">Filebeat yml file</a> and <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/metricbeat-playbook.yml" target="_top">Metricbeat yml file</a> to /etc/ansible/roles within the ansible container.
+- Update the /etc/ansible/hosts file within the ansible container to include the <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/hosts" target="_top">webservers and elk server</a>
+- Navigate to the <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/filebeat-config.yml" target="_top">Filebeat-config.yml</a> and <a href="https://github.com/RhondaLynch/Azure-Networking-Project/blob/main/Ansible/metricbeat-config.yml" target="_top">Metricbeat-config.yml</a> files in /etc/ansible within the container to configure to identify the host port, username and password for Elasticsearch and Kibana.
 - Run the playbooks, then navigate to Kibana at 40.117.114.71:5601/app/kibana to check that the installation worked as expected.
 
 ### Commands used to run playbooks:
