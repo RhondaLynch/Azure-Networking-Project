@@ -1,0 +1,33 @@
+---
+- name: Installing and Launch metricbeat
+  hosts: webservers
+  become: yes
+  tasks:
+    # Use command module
+  - name: Download metricbeat .deb file
+    command: curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.4.0-amd64.deb
+    # Use command module
+
+
+  - name: Install metricbeat .deb
+    command: dpkg -i metricbeat-7.4.0-amd64.deb
+ 
+  - name: Drop in metricbeat.deb file
+    copy:
+      src: /etc/ansible/metricbeat-config.yml
+      dest: /etc/metricbeat/metricbeat.yml
+
+  - name: enable system
+    command: metricbeat modules enable system
+
+  - name: metricbeat setup
+    command: metricbeat setup
+
+  - name: service metricbeat start   
+    command: service metricbeat start 
+
+  - name: enable service metricbeat on boot
+    systemd:
+      name: metricbeat
+      enabled: yes
+      state: started
